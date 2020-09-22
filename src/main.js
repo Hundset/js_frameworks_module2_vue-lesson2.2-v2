@@ -1,8 +1,27 @@
-import Vue from 'vue'
 import App from './App.vue'
+import VueRouter from 'vue-router'
+import Vue from 'vue'
+import HomePage from './HomePage.vue'
+import JobListing from './JobListingPage.vue'
+Vue.use(VueRouter)
 
-Vue.config.productionTip = false
+
+const router = new VueRouter ({
+    routes: [
+        {
+            path: '/',
+            name: 'Home',
+            component: HomePage
+        },
+        {
+            path: '/jobs',
+            name: 'jobs',
+            component: JobListing
+        }
+    ]
+})
 
 new Vue({
-  render: h => h(App),
+    render: h => h(App),
+    router
 }).$mount('#app')
