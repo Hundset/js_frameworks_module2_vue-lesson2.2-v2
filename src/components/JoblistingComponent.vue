@@ -1,28 +1,27 @@
 <template>
-    <div class="[ row ]">
-        <div class="[ col-sm-4 ]">
             <div class="[ card ]">
-                <div>
-                <img />
+                <div class="[ row ]">
+                    <div class="[ col-sm-4 ]"></div>
+                    <div class="[ col-sm-4 ]"><img :src="jobImg"/><br /><br /><br /></div>
+                    <div class="[ col-sm-4 ]"></div>
                 </div>
                 <div class="[ card--information ]"><br />
-                    <span>Date Created: </span> <br />
-                    <span>Title: </span> <br />
-                    <span>Company Name: </span><br />
-                    <span>Location: </span><br />
-                    <span>Type: </span><br />
-                    <span>Description: </span><br />
-                    <span>How to apply: </span><br />
-                    <span>Company Website: </span><a ref="" target="_blank">Click Here</a><br />
+                    <b>Date Created: </b>{{dateCreated}}<br />
+                    <b>Title: </b>{{title}}<br />
+                    <b>Company Name: </b>{{companyName}}<br />
+                    <b>Location: </b>{{location}}<br />
+                    <b>Type: </b>{{type}}<br />
+                    <b>Description: </b><span v-html="description"></span><br />
+                    <b>How to apply: </b><span v-html="howToApply"></span><br />
+                    <b>Company Website: </b><a :href="website" target="_blank">Click Here</a><br />
                 </div>
             </div>
-        </div>
-    </div>
 </template>
 
 <script>
 export default {
     name: 'JobListingComponent',
+    props: ['jobImg','dateCreated','title','companyName','location','type','description','howToApply','website'],
 }
 </script>
 

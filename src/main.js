@@ -1,6 +1,6 @@
-import App from './App.vue'
-import VueRouter from 'vue-router'
 import Vue from 'vue'
+import VueRouter from 'vue-router'
+import App from './App.vue'
 import HomePage from './HomePage.vue'
 import JobListing from './JobListingPage.vue'
 Vue.use(VueRouter)
