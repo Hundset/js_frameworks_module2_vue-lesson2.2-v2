@@ -1,6 +1,6 @@
 <template>
     <div class="[ row ]">
-        <div v-for="job in jobs" class="[ col-sm-12 ]">
+        <div v-for="job in jobs" :key="job" class="[ col-sm-12 ]">
             <JobListingcomponent v-bind:jobImg="job.company_logo"
                                  v-bind:dateCreated="job.created_at"
                                  v-bind:title="job.title"
@@ -34,7 +34,7 @@ export default {
         }
 
         const conversionUrl = 'https://cors-anywhere.herokuapp.com/';
-        const url = "https://jobs.github.comp/positions.json";
+        const url = "https://jobs.github.com/positions.json";
 
             fetch(conversionUrl + url)
             .then(function(response) {
